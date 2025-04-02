@@ -1,0 +1,117 @@
+/* Shimmer Cards Container */
+.shimmer-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  /* General Food Item Style */
+  .food-item {
+    width: 100%;
+    margin: auto;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px #00000015;
+    transition: 0.3s;
+    animation: fadeIn 1s;
+  }
+  
+  .food-item-image {
+    width: 100%;
+    border-radius: 15px 15px 0px 0px;
+  }
+  
+  .food-item-info {
+    padding: 20px;
+  }
+  
+  .food-item-name-rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .food-item-name-rating p {
+    font-size: 20px;
+    font-weight: 500;
+  }
+  
+  .food-item-name-rating img {
+    width: 70px;
+  }
+  
+  .food-item-desc {
+    color: #676767;
+    font-size: 12px;
+  }
+  
+  .food-item-price {
+    color: tomato;
+    font-size: 22px;
+    font-weight: 500;
+    margin: 10px 0px;
+  }
+  
+  /* Shimmer Effect Styling */
+  .food-item.shimmer {
+    background-color: #f9f9f9;
+    box-shadow: none;
+    pointer-events: none;
+  }
+  
+  /* Shimmer Container for Images and Text */
+  .food-item-img-container,
+  .food-item-info {
+    position: relative;
+  }
+  
+  /* Placeholder for Shimmer Effect */
+  .shimmer-placeholder {
+    background-color: #ddd;
+    border-radius: 8px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    animation: blink 1.5s infinite ease-in-out;
+  }
+  
+  .food-item-img-container.shimmer-img .shimmer-placeholder {
+    height: 150px; /* Image Placeholder Height */
+  }
+  
+  .food-item-name-rating .shimmer-placeholder.name {
+    height: 20px;
+    width: 60%;
+  }
+  
+  .food-item-name-rating .shimmer-placeholder.rating {
+    height: 16px;
+    width: 20%;
+    background-color: #f3f3f3;
+  }
+  
+  .food-item-info .shimmer-placeholder.description {
+    height: 12px;
+    width: 80%;
+    margin-top: 8px;
+  }
+  
+  .food-item-info .shimmer-placeholder.price {
+    height: 22px;
+    width: 40%;
+    margin-top: 8px;
+  }
+  
+  @keyframes blink {
+    0% {
+      opacity: 0.1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 0.1;
+    }
+  }
+  

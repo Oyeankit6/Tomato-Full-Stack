@@ -4,9 +4,15 @@ import React, { useContext } from "react";
 import "./FoofDisplay.css";
 import { StoreContext } from "../Context/StoreContext";
 import FoodItem from "../Fooditem/FoodItem";
+import { Shimmer } from "../Shimmer/Shimmer";
 
 const FoodDisplay = ({ category }) => {
   const { food_list } = useContext(StoreContext);
+
+
+  if(food_list.length===0){
+    return (<><Shimmer/></>)
+  }
   return (
     <div className="food-display" id=" food-display">
       <h2>Top Dishes for you</h2>
